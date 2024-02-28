@@ -110,7 +110,7 @@ class Order() : Restaurant() {
                     "2. Tidak\n" +
                     "Pilihan anda : "
         )
-        val userInput4 = IOUtils.getInputInteger()
+        userInput4 = IOUtils.getInputInteger()
         userInput4?.let {
             if (userInput4 == 1) {
                 run()
@@ -123,9 +123,11 @@ class Order() : Restaurant() {
         }
 
     }
-}
 
-fun main() {
-    val app = Order()
-    app.run()
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            Order().run()
+        }
+    }
 }
