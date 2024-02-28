@@ -114,8 +114,11 @@ class Order() : Restaurant() {
         userInput4?.let {
             if (userInput4 == 1) {
                 run()
-            } else {
+            } else if (userInput4 == 2) {
                 println("Terima kasih atas pesanan anda . . .")
+            } else {
+                println("Input anda salah, silahkan coba lagi . . .")
+                looping()
             }
         } ?: run {
             println("Input anda salah")
@@ -123,11 +126,8 @@ class Order() : Restaurant() {
         }
 
     }
+}
 
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-            Order().run()
-        }
-    }
+fun main() {
+    Order().run()
 }
